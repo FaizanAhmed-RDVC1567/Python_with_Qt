@@ -46,6 +46,14 @@ class MainWindow(QMainWindow):
         layout.addWidget(label2, 0, 1)
         layout.addWidget(label3, 1, 0)
         layout.addWidget(label4, 1, 1)
+        """
+        With a grid layout, we have to specify the coordinates at which the label/widget will be located.
+        In the example above:
+        0,0 is top left or 1st row & 1st column
+        0,1 is top right or 1st row & 2nd column
+        1,0 is bottom left or 2nd row & 1st column
+        1,1 is bottom right or 2nd row & 2nd column
+        """
 
 
 # Creating the application.
