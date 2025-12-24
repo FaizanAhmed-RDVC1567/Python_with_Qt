@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import (QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit,
-                               QSlider, QProgressBar, QComboBox, QListWidget, QRadioButton)
+                               QSlider, QProgressBar, QComboBox, QListWidget, QRadioButton, QCheckBox, QHBoxLayout)
 from PySide6.QtCore import Qt
 
 
@@ -49,6 +49,18 @@ class MainWindow(QMainWindow):
         list_widget = QListWidget()
         list_widget.addItems(['One', 'Two', 'Three'])
 
+        # Making some checkbox elements, then placing them in a horizontal box container that will be contained
+        # inside of the vertical box container below the other widget items.
+        check_box1 = QCheckBox('One')
+        check_box2 = QCheckBox('Two')
+        check_box3 = QCheckBox('Three')
+
+        inner_container = QWidget()
+        inner_layout = QHBoxLayout(inner_container)
+        inner_layout.addWidget(check_box1)
+        inner_layout.addWidget(check_box2)
+        inner_layout.addWidget(check_box3)
+
         # Now we add the labels and other items to the container
         layout.addWidget(label)
         layout.addWidget(button)
@@ -56,6 +68,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(text_edit)
         layout.addWidget(combo_box)
         layout.addWidget(list_widget)
+        layout.addWidget(inner_container)
 
         # A note about the above types of UI elements, interacting with them creates 'events' which can be checked
         # for, and an appropriate response be made in response to such events.
