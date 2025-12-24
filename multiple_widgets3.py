@@ -68,6 +68,11 @@ class MainWindow(QMainWindow):
         sliderBar = QSlider(Qt.Orientation.Horizontal)
         sliderBar.setRange(0, 100)
 
+        # Simple progress bar without animation and without default value
+        progress_bar = QProgressBar()
+        progress_bar.setOrientation(Qt.Orientation.Horizontal)
+        progress_bar.setRange(0, 100)
+
         # Now we add the labels and other items to the container
         layout.addWidget(label)
         layout.addWidget(button)
@@ -77,6 +82,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(list_widget)
         layout.addWidget(inner_container)
         layout.addWidget(sliderBar)
+        layout.addWidget(progress_bar)
 
         # A note about the above types of UI elements, interacting with them creates 'events' which can be checked
         # for, and an appropriate response be made in response to such events.
